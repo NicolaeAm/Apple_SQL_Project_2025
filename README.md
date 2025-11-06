@@ -64,10 +64,23 @@ CREATE TABLE warranty(
 );
 ```
 
-
-
-
-
-
-
+## Data Exploration & Optimization
+```sql
+SELECT DISTINCT repair_status FROM warranty;
+SELECT COUNT(*) FROM sales;
 ```
+ - Creating indexes on frequently filtered columns improved query execution time by over 90%.
+```sql
+CREATE INDEX sales_product_id ON sales(product_id);
+CREATE INDEX sales_store_id ON sales(store_id);
+```
+
+
+
+
+
+
+
+
+
+
