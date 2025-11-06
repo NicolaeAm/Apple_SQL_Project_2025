@@ -92,7 +92,7 @@ WHERE product_id = 'ST-31';
 CREATE INDEX sales_store_id ON sales(store_id);
 ```
 
-### Business Problems & SQL Solutions
+  # Business Problems & SQL Solutions
 
 
 
