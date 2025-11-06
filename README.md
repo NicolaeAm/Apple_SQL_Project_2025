@@ -96,8 +96,8 @@ CREATE INDEX sales_store_id ON sales(store_id);
 ## 1. Find the number of stores in each country.
 ```sql
 SELECT
-count(*) AS total_stores,
-country
+	COUNT(*) AS total_stores,
+	country
 FROM stores
 GROUP BY country
 ORDER BY 1 DESC
@@ -121,7 +121,7 @@ ORDER BY 3 DESC
 ## 3. Identify how many sales occurred in December 2023.
 ```sql
 SELECT 
-	count(sale_id) as  total_sale_dec
+	COUNT(sale_id) AS total_sale_dec
 FROM sales
 WHERE TO_CHAR(sale_date, 'MM-YYYY') = '12-2023'
 ;
@@ -158,7 +158,7 @@ SELECT
 	SUM(s.quantity) as total_unit_sales
 FROM sales AS s
 JOIN stores AS st
-ON s.store_id = st.store_id
+	ON s.store_id = st.store_id
 WHERE sale_date >= (CURRENT_DATE - INTERVAL '2 year')
 GROUP BY 1, 2
 ORDER BY 3 DESC;
@@ -182,7 +182,7 @@ SELECT
 FROM products AS p
 JOIN
 category AS c
-ON p.category_id = c.category_id
+	ON p.category_id = c.category_id
 GROUP BY 1, 2
 ORDER BY 3 DESC
 ;
@@ -222,10 +222,10 @@ SELECT
 FROM sales AS s
 JOIN 
 stores as st
-ON s.store_id = st.store_id
+	ON s.store_id = st.store_id
 JOIN 
 products AS p
-ON s.product_id = p.product_id
+	ON s.product_id = p.product_id
 GROUP BY 1, 2
 )
 SELECT * 
@@ -243,7 +243,7 @@ SELECT
 FROM warranty AS w 
 LEFT JOIN 
 sales AS s
-ON s.sale_id = w.sale_id
+	ON s.sale_id = w.sale_id
 WHERE 
 	w.claim_date - sale_date <= 180
 ;
@@ -257,9 +257,9 @@ SELECT
 FROM warranty AS w 
 RIGHT JOIN 
 sales AS s
-ON s.sale_id = w.sale_id
+	ON s.sale_id = w.sale_id
 JOIN products AS p
-ON p.product_id = s.product_id
+	ON p.product_id = s.product_id
 WHERE p.launch_date >= CURRENT_DATE - INTERVAL '2 years'
 GROUP BY 1
 HAVING COUNT(w.claim_id) > 0
@@ -275,7 +275,7 @@ SELECT
 FROM sales AS s
 JOIN 
 stores AS st
-ON s.store_id = st.store_id
+	ON s.store_id = st.store_id
 WHERE 
 	st.country = 'USA'
 	AND
@@ -294,13 +294,13 @@ SELECT
 FROM warranty AS w 
 LEFT JOIN 
 sales AS s 
-ON w.sale_id = s.sale_id
+	ON w.sale_id = s.sale_id
 JOIN 
 products AS p
-ON p.product_id = s.product_id
+	ON p.product_id = s.product_id
 JOIN 
 category AS c
-ON c.category_id = p.category_id
+	ON c.category_id = p.category_id
 WHERE 
 	w.claim_date >= CURRENT_DATE - INTERVAL '3.1 year'
 GROUP BY 1
@@ -325,10 +325,10 @@ SELECT
 	
 FROM sales AS s
 JOIN stores AS st
-ON s.store_id = st.store_id
+	ON s.store_id = st.store_id
 LEFT JOIN
 warranty AS w
-ON w.sale_id = s.sale_id
+	ON w.sale_id = s.sale_id
 GROUP BY 1
 ) AS t1
 ORDER BY 4 DESC
@@ -346,9 +346,9 @@ AS
 		SUM(s.quantity * p.price) AS total_sales
 	FROM sales AS S
 	JOIN products AS p
-	ON s.product_id = p.product_id
+		ON s.product_id = p.product_id
 	JOIN stores AS st
-	ON st.store_id = s.store_id
+		ON st.store_id = s.store_id
 	GROUP BY 1, 2, 3
 	ORDER BY 2, 3
 ),
@@ -390,10 +390,10 @@ SELECT
 FROM warranty AS w
 LEFT JOIN 
 sales AS s
-ON w.sale_id = s.sale_id
+	ON w.sale_id = s.sale_id
 JOIN 
 products AS p
-ON p.product_id = s.product_id
+	ON p.product_id = s.product_id
 WHERE claim_date >= (CURRENT_DATE - INTERVAL '6.1 year')
 GROUP BY 1
 ;
@@ -433,13 +433,13 @@ SELECT
 FROM paid_repair as pr
 JOIN
 total_repaired tr
-ON pr.store_id = tr.store_id
+	ON pr.store_id = tr.store_id
 JOIN stores AS st
-ON tr.store_id = st.store_id
+	ON tr.store_id = st.store_id
 ;
 ```
 
-## 20.Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
+## 20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 ```sql
 WITH monthly_sales
 AS
@@ -466,7 +466,7 @@ FROM monthly_sales
 ;
 ```
 ## 21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
-``sql
+```sql
 SELECT 
 	p.product_name,
 	CASE 
@@ -481,7 +481,7 @@ SELECT
 	SUM(s.quantity) AS total_qt_sale
 FROM sales as s
 JOIN products as p
-ON s.product_id = p.product_id
+	ON s.product_id = p.product_id
 GROUP BY  1, 2
 order by 1, 3 desc
 ;
