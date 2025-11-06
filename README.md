@@ -65,13 +65,30 @@ CREATE TABLE warranty(
 ```
 
 ## Data Exploration & Optimization
+ - Before running analytics, Exploratory Data Analysis (EDA) and performance tuning were performed.
 ```sql
+SELECT * FROM category;
+SELECT * FROM products;
+SELECT * FROM sales;
+SELECT * FROM stores;
+SELECT * FROM warranty;
+
 SELECT DISTINCT repair_status FROM warranty;
 SELECT COUNT(*) FROM sales;
 ```
  - Creating indexes on frequently filtered columns improved query execution time by over 90%.
+
 ```sql
+EXPLAIN ANALYZE
+SELECT * FROM sales
+WHERE product_id = 'P-44';
+
 CREATE INDEX sales_product_id ON sales(product_id);
+
+EXPLAIN ANALYZE
+SELECT * FROM sales
+WHERE product_id = 'ST-31';
+
 CREATE INDEX sales_store_id ON sales(store_id);
 ```
 
