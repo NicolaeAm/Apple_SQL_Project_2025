@@ -23,7 +23,8 @@ It models a realistic business structure with five relational tables that store 
 
 ## Dataset schema
 
-```CREATE TABLE stores(
+```sql
+CREATE TABLE stores(
     store_id VARCHAR(5) PRIMARY KEY,
     store_name VARCHAR(30),
     city VARCHAR(25),
@@ -61,4 +62,12 @@ CREATE TABLE warranty(
     repair_status VARCHAR(15),
     CONSTRAINT fk_orders FOREIGN KEY (sale_id) REFERENCES sales(sale_id)
 );
+```
+
+
+
+
+
+
+
 ```
