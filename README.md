@@ -5,7 +5,8 @@
 ## Overview 
 
 Project Overview
-This project is an SQL-based analysis of Apple’s global retail and product performance. Built on a custom relational database with over 1 million sales records, it examines key business metrics including store performance, product category trends, warranty claims, and seasonal sales dynamics.
+This project analyzes over 1 million rows of Apple’s global retail sales data using PostgreSQL.
+It demonstrates advanced SQL techniques for data modeling, performance optimization, and business insights.
 
 ## Objective
 
@@ -486,12 +487,46 @@ GROUP BY  1, 2
 order by 1, 3 desc
 ;
 ```
+## 22. Find the total revenue for each store.
+
+```sql
+SELECT 
+    st.store_id,
+    st.store_name,
+    st.city,
+    st.country,
+    SUM(s.quantity * p.price) AS total_revenue
+FROM sales AS s
+JOIN products AS p 
+    ON s.product_id = p.product_id
+JOIN stores AS st 
+    ON s.store_id = st.store_id
+GROUP BY 1, 2, 3, 4
+ORDER BY 5 DESC;**
+```
+
+## Analytical Techniques
+
+- Rolling Averages: To identify smoothed sales trends per product category.
+- Correlation Analysis: Used CORR() to measure relationship between sales volume and warranty claims.
+- Outlier Detection: Applied Z-score normalization to detect abnormal stores in warranty performance.
+- Growth Ratio Calculation: Used LAG() to compare year-over-year revenue at the store level.
+
+## Business Insights
+
+- USA and UK have the most stories.
+- USA and Canada stores lead global revenue generation.
+- 
 
 
+## Conclusion
 
+This project serves as a practical example of applying advanced SQL techniques to solve complex business problems.
+It demonstrates expertise in data modeling, optimization, and analytical querying — turning large datasets into actionable insights that reflect real business scenarios in global retail operations.
 
+## Autor - Nicolae 
 
-
+This project is part of my data analytics portfolio, showcasing SQL and data modeling skills relevant to data analyst roles.
 
 
 
