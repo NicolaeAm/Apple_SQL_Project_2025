@@ -514,9 +514,26 @@ ORDER BY 5 DESC;**
 
 ## Business Insights
 
-- USA and UK have the most stories.
-- USA and Canada stores lead global revenue generation.
-- 
+	1. Store Performance
+
+- USA and UK host the largest number of stores.
+- North American stores (USA, Canada) generate the highest total revenue.
+
+	2. Product & Category Analysis
+
+- Smartphone and Tablet categories account for the majority of sales revenue.
+- MacBook Pro M1 shows exceptional early adoption, with most sales occurring within the first 6 months after launch, in contrast, the Mac mini (2018) recorded minimal early sales, indicating a slower market response and niche product positioning.
+
+	3. Warranty & Reliability Insights
+
+- Most warranty claims are concentrated in the UAE (65%), followed by Spain (27%).
+- Most claims occur within 180 days of purchase (19907), showing early defect detection.
+- “Paid Repaired” claims for "Apple Kurfürstendamm" is over 37%.
+
+	4. Store Growth & Outliers
+
+- Some stores like "Apple Ankara", "Apple Seoul" showed over 560% annual revenue growth in 2023, while others declined more then 90% post-2024.
+- Outlier detection identified underperforming stores with below-average warranty handling efficiency.
 
 
 ## Conclusion
