@@ -17,6 +17,10 @@ The main goal of this project is to analyze Apple’s sales and warranty data to
   - Store growth ratios and performance benchmarking
   - Seasonality and correlation analysis for sales optimization
 
+## Entity Relationship Diagram (ERD)
+
+![Dataset Schema](https://github.com/NicolaeAm/Apple_SQL_Project_2025/blob/main/apple_dataset_schema.pdf)
+
 ## Dataset
 
 The dataset used in this project represents Apple sales environment, containing over one million transaction records.
