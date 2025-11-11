@@ -11,11 +11,11 @@ It demonstrates advanced SQL techniques for data modeling, performance optimizat
 ## Objective
 
 The main goal of this project is to analyze Apple’s sales and warranty data to uncover key insights about:
-  -Revenue distribution across countries and stores
-  -Product category performance and demand trends
-  -Warranty claim patterns and reliability metrics
-  -Store growth ratios and performance benchmarking
-  -Seasonality and correlation analysis for sales optimization
+  - Revenue distribution across countries and stores
+  - Product category performance and demand trends
+  - Warranty claim patterns and reliability metrics
+  - Store growth ratios and performance benchmarking
+  - Seasonality and correlation analysis for sales optimization
 
 ## Dataset
 
@@ -517,13 +517,13 @@ ORDER BY 5 DESC;**
 ###  1. Store Performance
 
 - USA and UK host the largest number of stores.
-- North American stores (USA, Canada) generate the highest total revenue.
+- North American stores (USA, Canada) contributes the highest total revenue. 
 
 ### 2. Product & Category Analysis
 
 - Smartphone and Tablet categories account for the majority of sales revenue.
-- MacBook Pro M1 shows exceptional early adoption, with most sales occurring within the first 6 months after launch.
-- In contrast, the Mac mini (2018) recorded minimal early sales, indicating a slower market response and niche product positioning.
+- MacBook Pro M1 shows exceptional post-launch adoption.
+- In contrast, the Mac mini (2018) slower uptake, niche demand.
 
 ### 3. Warranty & Reliability Insights
 
@@ -533,7 +533,7 @@ ORDER BY 5 DESC;**
 
 ### 4. Store Growth & Outliers
 
-- Some stores like "Apple Ankara", "Apple Seoul" showed over 560% annual revenue growth in 2023, while others declined more then 90% post-2024.
+- Stores like "Apple Ankara", "Apple Seoul" showed over 560% annual revenue growth in 2023, while others declined more then 90% post-2024.
 - Outlier detection identified underperforming stores with below-average warranty handling efficiency.
 
 
