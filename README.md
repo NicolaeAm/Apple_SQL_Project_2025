@@ -1,6 +1,6 @@
 # Apple’s global retail and product performance project.
 
-![Apple Logo](https://github.com/NicolaeAm/Apple_SQL_Project_2025/blob/main/apple.webp)
+![Apple Logo](https://github.com/NicolaeAm/Apple_SQL_Project_2025/blob/main/Apple_logo2025.png)
 
 ## Overview 
 
