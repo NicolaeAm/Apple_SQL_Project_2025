@@ -19,7 +19,7 @@ The main goal of this project is to analyze Apple’s sales and warranty data to
 
 ## Entity Relationship Diagram (ERD)
 
-![Dataset Schema](https://github.com/NicolaeAm/Apple_SQL_Project_2025/blob/main/apple_erd.jpg)
+![Dataset Schema](https://github.com/NicolaeAm/Apple_SQL_Project_2025/blob/main/apple_erd_schema.png)
 
 ## Dataset
 
